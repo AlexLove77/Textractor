@@ -319,11 +319,11 @@ class Textractor
             if (preg_match('@<h1[^>]*>@i', $html_lines[$i])) {
                 $wait_lines = [];
                 // 先向下找n行
-                for ($j = $i + 1; $j <= $i + $depth; $j++) {
+                for ($j = $i + 1; $j <= $i + $depth && $j < $html_lines_count; $j++) {
                     $wait_lines[] = $j;
                 }
                 // 再向上找n行
-                for ($j = $i - 1; $j >= $i - $depth; $j--) {
+                for ($j = $i; $j >= $i - $depth && $j >= 0; $j--) {
                     $wait_lines[] = $j;
                 }
                 // 开始匹配

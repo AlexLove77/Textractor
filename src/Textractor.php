@@ -361,4 +361,14 @@ class Textractor
         }
         return $title;
     }
+
+    /**
+     * 获取url
+     *
+     * @return url object
+     */
+    public function getUrl()
+    {
+        return $this->url;
+    }
 }
